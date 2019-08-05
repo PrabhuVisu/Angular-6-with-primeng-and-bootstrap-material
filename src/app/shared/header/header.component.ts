@@ -7,7 +7,9 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 	fixed: boolean = false;
-	constructor() { }
+	
+	constructor() { 
+	 }
 
 	ngOnInit() {
 	}

@@ -1,0 +1,11 @@
+.btn-primary-spacing
+{
+margin-right: 30px;
+margin-bottom: 5px !important;
+}
+.my-drop-zone {
+  border: dotted 3px lightgray;
+}
+.nv-file-over {
+  border: dotted 3px red;
+}

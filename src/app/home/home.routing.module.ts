@@ -8,9 +8,11 @@ import { ChartModule } from 'primeng/chart';
 import { MessagesComponent } from './messages/messages.component';
 import { ActivityFeedComponent } from './activity-feed/activity-feed.component';
 import { AboutComponent } from '../about/about.component';
+import { AuthGuard } from '../shared';
 
 const homeRoute: Routes = [
-  	{ path: '', component: HomeComponent },
+  { path: 'login', loadChildren: '../login/login.module#LoginModule' },
+  	{ path: 'home', component: HomeComponent ,  canActivate: [AuthGuard]},
     { path: 'about', component: AboutComponent },
 ];
 

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { HttpModule, RequestOptions } from '@angular/http';
+import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,6 +10,8 @@ import { HomeRoutingModule } from './home/home.routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { AuthGuard } from './shared';
+
 
 
 
@@ -17,7 +20,7 @@ import { HeaderComponent } from './shared/header/header.component';
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,9 +30,10 @@ import { HeaderComponent } from './shared/header/header.component';
     HttpModule,
     HttpClientModule,
     ReactiveFormsModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    TranslateModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
