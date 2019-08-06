@@ -1,0 +1,140 @@
+<div [@routerTransition]>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <form [formGroup]="createJob" (ngSubmit)="onSubmit()">
+
+    <div class="form-row justify-content-center">
+      <h3 class="form-section">Create/Update Job</h3>
+    </div>
+
+    <div class="form-row justify-content-center">
+      <div class="form-group col-md-6">
+        <label>Name of the Position</label>
+        <input type="text" formControlName="positionName" class="form-control" placeholder="Enter Position Name" [ngClass]="{ 'is-invalid': submitted && createJob.controls.positionName.errors }" required>
+        <div *ngIf="submitted && createJob.controls.positionName.errors" class="invalid-feedback">
+             <div *ngIf="createJob.controls.positionName.errors.required"> positionName is required</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row justify-content-center" >
+      <div class="form-group col-3">
+        <label>Client Information</label>
+        <input type="text" formControlName="clientInfo" class="form-control" >
+      </div>
+      <div class="form-group  col-3">
+        <label>Client Reference Id</label>
+        <input type="text" formControlName="clientRefId" class="form-control" >
+      </div>
+    </div>
+
+    <div class="form-row justify-content-center">
+        <div class="form-group col-6">
+            <label>Mandatory Skills</label>
+            <tag-input [onlyFromAutocomplete]="true"
+                       [allowDupes]="false"
+                       formControlName="mandatorySkills"
+                       placeholder="Add Skills"
+                       [removable]="true"
+                       (mouseup)="onLikeRemove($event)"
+                       secondaryPlaceholder="Add Skills">
+            <tag-input-dropdown [showDropdownIfEmpty]="true"
+                                [dynamicUpdate]="false"
+                                [focusFirstElement]="true"
+                                [zIndex]="1051"
+                                [autocompleteItems]="userData">
+            <ng-template let-item="item" let-index="index" translate> {{item.value}} </ng-template>
+            </tag-input-dropdown>
+            </tag-input>
+            <div *ngIf="submitted && createJob.controls.mandatorySkills.errors" class="invalid-feedback">
+            <div *ngIf="createJob.controls.mandatorySkills.errors.required"> mandatorySkills is required </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row justify-content-center">
+        <div class="form-group col-6">
+            <label>GoodToHave Skills</label>
+            <tag-input [onlyFromAutocomplete]="true"
+                       [allowDupes]="false"
+                       formControlName="goodToHaveSkills"
+                       placeholder="Add Skills"
+                       [removable]="true"
+                       (mouseup)="onLikeRemove($event)"
+                       secondaryPlaceholder="Add Skills">
+            <tag-input-dropdown [showDropdownIfEmpty]="true"
+                                [dynamicUpdate]="false"
+                                [focusFirstElement]="true"
+                                [zIndex]="1051"
+                                [autocompleteItems]="userData">
+            <ng-template let-item="item" let-index="index" translate> {{item.value}} </ng-template>
+            </tag-input-dropdown>
+            </tag-input>
+        </div>
+    </div>
+
+    <div class="form-row justify-content-center">
+        <div class="form-group col-3">
+            <label>Minimum Experience</label>
+            <input class="form-control" placeholder="ExpRequired" formControlName="ExpRequired" required pattern="[0-9]*" [ngClass]="{ 'is-invalid': submitted && createJob.controls.ExpRequired.errors }">
+            <div *ngIf="submitted && createJob.controls.ExpRequired.errors" class="invalid-feedback">
+                <div *ngIf="createJob.controls.ExpRequired.errors.required"> ExpRequired is required</div>
+            </div>
+            <div class="text-danger" *ngIf="createJob.get('ExpRequired').errors?.pattern">ExpRequired is invalid</div>
+        </div>
+        <div class="form-group col-3">
+            <label>Relevant Experience</label>
+            <input class="form-control" placeholder="RelevantExp" formControlName="RelevantExp" required pattern="[0-9]*" [ngClass]="{ 'is-invalid': submitted && createJob.controls.RelevantExp.errors }">
+            <div *ngIf="submitted && createJob.controls.RelevantExp.errors" class="invalid-feedback">
+                <div *ngIf="createJob.controls.RelevantExp.errors.required"> RelevantExp is required</div>
+            </div>
+            <div class="text-danger" *ngIf="createJob.get('RelevantExp').errors?.pattern">RelevantExp is invalid</div>
+        </div>
+    </div>
+
+    <div class="form-row justify-content-center">
+            <div class="form-group col-3">
+              <label>Japanese Required</label>
+              <div>
+                <input type="radio" value="Yes" name="japaneseRequired" required formControlName="japaneseRequired"> Yes
+                <input type="radio" value="No" name="japaneseRequired" required formControlName="japaneseRequired"> No
+              </div>
+            </div>
+            <div class="form-group col-3">
+              <label>Japanese Skill Level</label>
+              <div>
+                <select class="form-control" formControlName="japaneseSkillLevel">
+                  <option [value]="level" *ngFor="let level of levels">
+                   {{level}}
+                  </option>
+                </select>
+              </div>
+            </div>
+    </div>
+
+    <div class="form-row justify-content-center">
+        <div class="form-group col-3">
+            <label>Requirement Count</label>
+            <input type="text" formControlName="requirementCount" class="form-control" pattern="[0-9]*" [ngClass]="{ 'is-invalid': submitted && createJob.controls.requirementCount.errors }">
+            <div *ngIf="submitted && createJob.controls.requirementCount.errors" class="invalid-feedback">
+                <div *ngIf="createJob.controls.requirementCount.errors.required">requirementCount is required</div>
+            </div>
+            <div class="text-danger" *ngIf="createJob.get('requirementCount').errors?.pattern">requirementCount is invalid</div>
+        </div>
+        <div class="form-group col-3">
+            <label>Possible Close Date</label>
+          <!-- <input type="text" placeholder="Datepicker" class="form-control" formControlName="possibleCloseDate" bsDatepicker [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY' }">-->
+        </div>
+    </div>
+
+    <div class="form-row justify-content-center" >
+        <div class="form-group col-6">
+            <button pButton type="button" label="CREATE" class="ui-button-success btn-sm btn-primary-spacing" (click)="onSubmit()"></button>
+            <button pButton type="button" label="CANCEL" class="ui-button-cancel btn-sm btn-primary-spacing"></button>
+        </div>
+    </div>
+
+  </form>
+</div>
+  
