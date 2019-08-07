@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';  
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-//import { BsDatepickerModule } from 'ngx-bootstrap';
+import { BsDatepickerModule } from 'ngx-bootstrap';
 import { Ng2CompleterModule } from 'ng2-completer';
 import { TagInputModule } from 'ngx-chips';
 import {ButtonModule} from 'primeng/button';
@@ -26,7 +26,7 @@ const homeRoute: Routes = [
 @NgModule({
   imports: [
     ChartModule,CommonModule,FormsModule,ReactiveFormsModule,
-    /*BsDatepickerModule,*/Ng2CompleterModule,TagInputModule,ButtonModule,
+   BsDatepickerModule.forRoot(),Ng2CompleterModule,TagInputModule,ButtonModule,
   	RouterModule.forRoot(homeRoute)
   ],
   exports: [RouterModule],

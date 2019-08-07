@@ -1,5 +1,6 @@
 <div [@routerTransition]>
 
+    <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <form [formGroup]="createJob" (ngSubmit)="onSubmit()">
@@ -55,7 +56,7 @@
 
     <div class="form-row justify-content-center">
         <div class="form-group col-6">
-            <label>GoodToHave Skills</label>
+            <label>Good To Have Skills</label>
             <tag-input [onlyFromAutocomplete]="true"
                        [allowDupes]="false"
                        formControlName="goodToHaveSkills"
@@ -124,7 +125,7 @@
         </div>
         <div class="form-group col-3">
             <label>Possible Close Date</label>
-          <!-- <input type="text" placeholder="Datepicker" class="form-control" formControlName="possibleCloseDate" bsDatepicker [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY' }">-->
+            <input type="text" placeholder="Datepicker" class="form-control" formControlName="possibleCloseDate" bsDatepicker [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY' }">
         </div>
     </div>
 
