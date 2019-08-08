@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { AuthGuard } from './shared';
+import { PendingtaskComponent } from './pendingtask/pendingtask.component';
+import { TaskdetailsComponent } from './taskdetails/taskdetails.component';
 
 
 
@@ -21,6 +23,8 @@ import { AuthGuard } from './shared';
     AppComponent,
     FooterComponent,
     HeaderComponent,
+    PendingtaskComponent,
+    TaskdetailsComponent,
   ],
   imports: [
     BrowserModule,

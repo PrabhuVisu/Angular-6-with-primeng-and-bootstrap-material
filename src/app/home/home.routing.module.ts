@@ -15,12 +15,17 @@ import { ActivityFeedComponent } from './activity-feed/activity-feed.component';
 import { AboutComponent } from '../about/about.component';
 import { AuthGuard } from '../shared';
 import { CreatejobComponent } from '../createjob/createjob.component';
+import { PendingtaskComponent } from '../pendingtask/pendingtask.component';
+import { TaskdetailsComponent } from '../taskdetails/taskdetails.component';
+
 
 const homeRoute: Routes = [
+  { path: 'home', component: HomeComponent ,  canActivate: [AuthGuard]},
   { path: 'login', loadChildren: '../login/login.module#LoginModule' },
-  	{ path: 'home', component: HomeComponent ,  canActivate: [AuthGuard]},
-    { path: 'about', component: AboutComponent },
-    { path: 'createjob', component: CreatejobComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'createjob', component: CreatejobComponent },
+  { path: 'pendingtask', component: PendingtaskComponent },
+  { path: 'task/:id' , component: TaskdetailsComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,51 @@
+<br>
+<br>
+<br>
+<table class="table table-striped">
+  <thead>
+    <th scope="col">Name</th>
+    <th scope="col">Value</th>
+  </thead>
+  <tbody>
+      <div *ngFor="let x of formField_array; index as i">
+        <div *ngIf="x.value !== undefined ; else elseTemplate">
+          <tr>
+          <td>{{ x.name }}</td>
+         <!--  <td>{{ x.value }}</td> -->
+          <td> <input  type="text"  name="input" class="form-control"  value="{{ x.value }}"  readonly> </td>
+        </tr>
+
+        </div>
+        <ng-template #elseTemplate>
+            <div *ngIf="x.value === undefined && (x.name === 'Select Approver 1 :' || x.name  === 'Select Approver 2 :'); else elseTemplate1">
+            <tr>
+                <td>{{ x.name }}</td>
+               <!--  <td>{{ x.value }}</td> -->
+               <select class="form-control" formControlName="approver">
+                  <option [value]="level" *ngFor="let x of approver_name">
+                   {{x}}
+                  </option>
+                </select>
+              </tr>
+            </div>
+            <ng-template #elseTemplate1>
+                <tr>
+                    <td>{{ x.name }}</td>
+                    <td> <input  type="text"  name="input" class="form-control"> </td>
+                    </tr>
+              </ng-template>
+        </ng-template>
+      </div>
+
+  <!--   <th scope="row">{{ i + 1 }}</th> -->
+
+
+
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary btn-color btn-bg-color btn-sm col-xs-2 btn-primary-spacing" (click)="approveTask()">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Approve
+  </button>
+  <button type="button" class="btn btn-primary btn-color btn-bg-color btn-sm col-xs-2 btn-primary-spacing">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Reject
+    </button>
