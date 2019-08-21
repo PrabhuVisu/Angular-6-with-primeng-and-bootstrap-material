@@ -14,6 +14,15 @@ export class HeaderComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	get username(): any {
+		return localStorage.getItem('userName');
+	}
+
+	onLoggedout() {
+		localStorage.removeItem('isLoggedin');
+		localStorage.removeItem('userName');
+    }
+
 	@HostListener('window:scroll', ['$event']) onWindowScroll(e) {
 	  const number = e.target.documentElement.scrollTop;
 	  if (number > 80) {
