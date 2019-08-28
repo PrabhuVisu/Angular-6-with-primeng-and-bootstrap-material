@@ -1,0 +1,31 @@
+<div [@routerTransition]>
+  <br>
+  <br>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Position Name</th>
+      <th scope="col">Client Name</th>
+      <th scope="col">Client Reference</th>
+      <th scope="col">Skill Set</th>
+      <th scope="col">Experience</th>
+      <th scope="col">Openings</th>
+      <th scope="col">Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let x of jobs; index as i">
+      <td>
+        {{ x.position_name }}
+      </td>
+      <td>{{ x.client_name }}</td>
+      <td>{{ x.client_reference }}</td>
+      <td>{{ x.skillset }}</td>
+      <td>{{ x.experience }}</td>
+      <td>{{ x.openings }}</td>
+      <td>{{ x.status }}</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+  

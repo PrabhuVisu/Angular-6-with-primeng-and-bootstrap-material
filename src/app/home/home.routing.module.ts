@@ -17,6 +17,9 @@ import { AuthGuard } from '../shared';
 import { CreatejobComponent } from '../createjob/createjob.component';
 import { PendingtaskComponent } from '../pendingtask/pendingtask.component';
 import { TaskdetailsComponent } from '../taskdetails/taskdetails.component';
+import { JoblistComponent } from '../joblist/joblist.component';
+import { UpdatejobComponent } from '../updatejob/updatejob.component';
+import { TimesheetComponent } from '../timesheet/timesheet.component';
 
 
 const homeRoute: Routes = [
@@ -25,7 +28,10 @@ const homeRoute: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'createjob', component: CreatejobComponent },
   { path: 'pendingtask', component: PendingtaskComponent },
-  { path: 'task/:id' , component: TaskdetailsComponent }
+  { path: 'task/:id' , component: TaskdetailsComponent },
+  { path: 'joblist', component: JoblistComponent },
+  { path: 'updatejob', component: UpdatejobComponent },
+  { path: 'timesheet', component: TimesheetComponent }
 ];
 
 @NgModule({

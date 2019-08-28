@@ -13,8 +13,9 @@ import { HeaderComponent } from './shared/header/header.component';
 import { AuthGuard } from './shared';
 import { PendingtaskComponent } from './pendingtask/pendingtask.component';
 import { TaskdetailsComponent } from './taskdetails/taskdetails.component';
-
-
+import { JoblistComponent } from './joblist/joblist.component';
+import { UpdatejobComponent } from './updatejob/updatejob.component';
+import { TimesheetComponent } from './timesheet/timesheet.component';
 
 
 
@@ -24,7 +25,7 @@ import { TaskdetailsComponent } from './taskdetails/taskdetails.component';
     FooterComponent,
     HeaderComponent,
     PendingtaskComponent,
-    TaskdetailsComponent,
+    TaskdetailsComponent,JoblistComponent,UpdatejobComponent,TimesheetComponent,
   ],
   imports: [
     BrowserModule,
