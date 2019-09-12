@@ -20,6 +20,9 @@ import { TaskdetailsComponent } from '../taskdetails/taskdetails.component';
 import { JoblistComponent } from '../joblist/joblist.component';
 import { UpdatejobComponent } from '../updatejob/updatejob.component';
 import { TimesheetComponent } from '../timesheet/timesheet.component';
+import { DynamoComponent } from '../dynamo/dynamo.component';
+import { ProfileComponent } from '../profile/profile.component';
+
 
 
 const homeRoute: Routes = [
@@ -27,11 +30,13 @@ const homeRoute: Routes = [
   { path: 'login', loadChildren: '../login/login.module#LoginModule' },
   { path: 'about', component: AboutComponent },
   { path: 'createjob', component: CreatejobComponent },
+  { path: 'dynamo', component: DynamoComponent },
   { path: 'pendingtask', component: PendingtaskComponent },
   { path: 'task/:id' , component: TaskdetailsComponent },
   { path: 'joblist', component: JoblistComponent },
   { path: 'updatejob', component: UpdatejobComponent },
-  { path: 'timesheet', component: TimesheetComponent }
+  { path: 'timesheet', component: TimesheetComponent },
+  {path: 'profiledata', component: ProfileComponent }
 ];
 
 @NgModule({
@@ -44,7 +49,7 @@ const homeRoute: Routes = [
   declarations: [
     AboutComponent,
     HomeComponent,
-    CreatejobComponent,
+    CreatejobComponent,DynamoComponent,ProfileComponent,
     MessagesComponent,
     ActivityFeedComponent
   ],
