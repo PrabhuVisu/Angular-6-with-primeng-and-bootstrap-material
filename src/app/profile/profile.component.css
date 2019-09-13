@@ -1,0 +1,85 @@
+.feature-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.content-section {
+    background-image: linear-gradient(to left,#2bc0ec,#4e51dd);
+    color: #fff;
+    display: block;
+padding: 30px;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+background-color: #f5f7f8;
+}
+
+.implementation{
+    background-color: #fff;
+    overflow: visible;
+        overflow-x: visible;
+        overflow-y: visible;
+}
+
+.ui-card {
+    background-color: #ffffff;
+    color: #333333;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.ui-corner-all {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+}
+
+.ui-widget {
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-style: solid;
+        text-decoration-color: currentcolor;
+}
+
+.ui-widget, .ui-widget * {
+    box-sizing: border-box;
+}
+
+.ui-card-header img {
+    width:151%
+}
+
+.ui-card-body {
+    padding:1em;
+}
+
+.ui-card-title {
+    font-size:1.5em;
+    font-weight:700;
+    margin-bottom:.5em;
+    padding:.80em
+}
+   
+.ui-card-subtitle {
+    opacity:.7;
+    margin-bottom:.5em;
+    margin-top:-.5em;
+    font-weight:700;
+    padding:1em
+}
+
+.ui-card-content {
+    padding:3em;
+}

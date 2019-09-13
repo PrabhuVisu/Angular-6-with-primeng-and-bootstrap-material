@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';  
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -6,6 +6,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap';
 import { Ng2CompleterModule } from 'ng2-completer';
 import { TagInputModule } from 'ngx-chips';
 import {ButtonModule} from 'primeng/button';
+import { SharedModule, PanelModule } from 'primeng/primeng';
+import {TabViewModule} from 'primeng/tabview';
 
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
@@ -41,7 +43,7 @@ const homeRoute: Routes = [
 
 @NgModule({
   imports: [
-    ChartModule,CommonModule,FormsModule,ReactiveFormsModule,
+    ChartModule,CommonModule,FormsModule,ReactiveFormsModule,SharedModule,PanelModule,TabViewModule,
    BsDatepickerModule.forRoot(),Ng2CompleterModule,TagInputModule,ButtonModule,
   	RouterModule.forRoot(homeRoute)
   ],
@@ -53,6 +55,7 @@ const homeRoute: Routes = [
     MessagesComponent,
     ActivityFeedComponent
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA ],
   providers: []
 })
 

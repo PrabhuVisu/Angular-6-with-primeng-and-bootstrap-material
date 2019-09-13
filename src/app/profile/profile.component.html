@@ -1,39 +1,54 @@
-<br>
-<br>
 
-<div class="card" >
-    <div class="card-header">
-    <b> User Details</b>
-    </div>
-    <div class="card-body" *ngIf= "data[1]">
-     <h5 class="card-title">{{data[1].profileData['firstName']}} {{data[1].profileData['lastName']}}</h5>
-     <p class="card-text"> Role: {{data[1].profileData['roleName']}}</p>
-    </div>
+<div class="content-section" *ngIf= "data[1]">
+  <div>
+  <span class="feature-title">Welcome {{data[1].profileData['firstName']}} {{data[1].profileData['lastName']}} !</span>
+  <p class="card-text"> Role: {{data[1].profileData['roleName']}}</p>
   </div>
-  <br>
-  <br>
+</div>
 
+<div class="implementation">
   <div class="row">
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body" *ngIf= "data[1]">
-            <h5 class="card-title">OtherDetails</h5>
-           <p class="card-text">Email: {{data[1].profileData['email1']}}</p>
-            <p class="card-text">Company Name: {{data[1].profileData['companyLegalName']}}</p>
-            <p class="card-text">Reports To: {{data[1].profileData['reportsToFirstName']}} {{data[1].profileData['reportsToLastName']}}</p>
-            <p class="card-text">Reports to Id: {{data[1].profileData['reportsToEmail']}}</p>
+  <div class="col-sm-6">
+  <p-card header="Advanced Card" subheader="subheader" styleClass="ui-card-shadow">
+      <div class="ui-card-shadow ui-card ui-widget ui-widget-content ui-corner-all" style="width: 480px;">
+       <div class="ui-card-header ng-star-inserted">
+          <p-header>
+            <img src="../../assets/computeruser.jpg">
+          </p-header>
+       </div>
+        <div class="ui-card-title ng-star-inserted">Profile Details</div>
+        <div class="ui-card-subtitle ng-star-inserted">Displaying the details of the currently logged in user.</div>
+        <div class="ui-card-content">
+          <div style="line-height:1.5" *ngIf= "data[1]">
+              <p class="card-text">Email: {{data[1].profileData['email1']}}</p>
+              <p class="card-text">Company Name: {{data[1].profileData['companyLegalName']}}</p>
+              <p class="card-text">Reports To: {{data[1].profileData['reportsToFirstName']}} {{data[1].profileData['reportsToLastName']}}</p>
+              <p class="card-text">Reports to Id: {{data[1].profileData['reportsToEmail']}}</p>
           </div>
-        </div>
+        </div>  
       </div>
-      <div class="col-sm-6">
-        <div class="card" *ngIf= "data[0] && data[1]">
-          <div class="card-body">
-            <h5 class="card-title">LoginDetails</h5>
-            <p class="card-text">Last LoggedIn: {{data[0].loggedIndata['lastLoginDate']}}</p>
-            <p class="card-text">Login Attempts:{{data[0].loggedIndata['loginAttempts']}}</p>
-           <p class="card-text">Status: {{data[1].profileData['statusName']}}</p>
+  </p-card>
+  </div>
+  <div class="col-sm-6">
+  <p-card header="Advanced Card" subheader="subheader" styleClass="ui-card-shadow">
+      <div class="ui-card-shadow ui-card ui-widget ui-widget-content ui-corner-all" style="width: 480px;">
+          <div class="ui-card-header ng-star-inserted">    
+        <p-header>
+                <img src="../../assets/loginprofile.png">
+              </p-header>
           </div>
-        </div>
+          <div class="ui-card-title ng-star-inserted">Login Details</div>
+          <div class="ui-card-subtitle ng-star-inserted">Displaying the login details of the user.</div>
+          <div class="ui-card-content">
+            <div style="line-height:1.5" *ngIf="data[0] && data[1]">
+              <p class="card-text">Last LoggedIn: {{data[0].loggedIndata['lastLoginDate']}}</p>
+              <p class="card-text">Login Attempts:{{data[0].loggedIndata['loginAttempts']}}</p>
+              <p class="card-text">Status: {{data[1].profileData['statusName']}}</p>
+            </div>
+          </div>
       </div>
-    </div>
+  </p-card>
+  </div>
+  </div>
+</div>
 
